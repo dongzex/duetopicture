@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片优化工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>图片优化工具</h1>
+            <p>压缩体积 · 提升画质 · 一键优化</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="imageInput" accept="image/png,image/jpeg" style="display: none;">
+                    <div class="upload-content">
+                        <img src="upload-icon.svg" alt="上传图标" class="upload-icon">
+                        <p>点击或拖拽图片到这里</p>
+                        <p class="support-text">支持 PNG、JPG 格式，最大 10MB</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compression-section" style="display: none;">
+                <div class="image-preview">
+                    <div class="preview-container">
+                        <h3>原始图片</h3>
+                        <img id="originalPreview" alt="原始图片预览">
+                        <div class="file-info">
+                            <span id="originalSize"></span>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <h3>优化后</h3>
+                        <img id="compressedPreview" alt="优化后预览">
+                        <div class="file-info">
+                            <span id="compressedSize"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <div class="quality-control">
+                            <label for="quality">压缩质量</label>
+                            <div class="slider-container">
+                                <input type="range" id="quality" min="1" max="100" value="80">
+                                <span id="qualityValue">80%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="enhance-control">
+                            <label for="enhance">画质增强</label>
+                            <div class="toggle-container">
+                                <input type="checkbox" id="enhance" class="toggle-input">
+                                <label for="enhance" class="toggle-label"></label>
+                            </div>
+                        </div>
+
+                        <div class="enhance-options" style="display: none;">
+                            <div class="enhance-slider">
+                                <label for="sharpness">锐化程度</label>
+                                <div class="slider-container">
+                                    <input type="range" id="sharpness" min="0" max="100" value="50">
+                                    <span id="sharpnessValue">50%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="downloadBtn" class="download-btn">下载优化后的图片</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

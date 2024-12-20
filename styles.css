@@ -1,0 +1,239 @@
+:root {
+    --primary-color: #2563eb;
+    --background-color: #f8fafc;
+    --text-color: #1e293b;
+    --border-radius: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+header p {
+    color: #64748b;
+}
+
+.upload-section {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.upload-area {
+    background: white;
+    border-radius: var(--border-radius);
+    border: 2px dashed #e2e8f0;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+    background: #f8fafc;
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.upload-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+    transition: all 0.2s ease;
+}
+
+.upload-area:hover .upload-icon {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.upload-content p {
+    color: var(--text-color);
+    margin: 0.25rem 0;
+}
+
+.upload-content .support-text {
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.compression-section {
+    margin-top: 2rem;
+}
+
+.image-preview {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .image-preview {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.preview-container {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.preview-container h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.preview-container img {
+    width: 100%;
+    height: auto;
+    border-radius: calc(var(--border-radius) - 2px);
+}
+
+.controls {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.quality-control, .enhance-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+input[type="range"] {
+    flex: 1;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.toggle-container {
+    position: relative;
+    width: 44px;
+    height: 24px;
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 44px;
+    height: 24px;
+    background: #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle-label:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.toggle-input:checked + .toggle-label {
+    background: var(--primary-color);
+}
+
+.toggle-input:checked + .toggle-label:after {
+    left: calc(100% - 22px);
+}
+
+.download-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+}
+
+.file-info {
+    margin-top: 0.75rem;
+    color: #64748b;
+    font-size: 0.875rem;
+}
